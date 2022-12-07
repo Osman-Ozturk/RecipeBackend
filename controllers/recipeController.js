@@ -29,7 +29,16 @@ const saveOneRecipe =async (req,res)=>{
         }
 
 }
+const getByTag =async (req,res)=>{
+        try {
+                const result =await Recipe.find({tags:req.params.name})
+                res.status(201).json(result)
+        } catch (error) {
+           console.log(error);     
+        }
+
+}
 
 
 
-export {getAllRecipes,getByIdRecipe,saveOneRecipe}
+export {getAllRecipes,getByIdRecipe,saveOneRecipe,getByTag}
