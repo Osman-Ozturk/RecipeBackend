@@ -6,7 +6,7 @@ const recipeModel = new mongoose.Schema({
   subtitle: String,
   author: { type: String, required: true },
   preparation: { type: String, required: true },
-  ingredients: [{ name: String, quantity: Number, type: String }],
+  ingredients: [{ name: String, quantity: String, measure: String }],
   tags: {
     type: String,
     enum: ["Beef", "Pork", "Chicken", "Vegan", "Vegetarian", "FastFood"],
@@ -14,7 +14,7 @@ const recipeModel = new mongoose.Schema({
   comments: [
     {
       name: String,
-      text:String,
+      text: String,
     },
   ],
 });
